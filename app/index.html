@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body id="map">
+	<script type="text/javascript" src="polymaps.js"></script>
+	<script type="text/javascript">
+	var po = org.polymaps;
+
+	var map = po.map()
+		.container(document.getElementById("map").appendChild(po.svg("svg")))
+		.add(po.interact())
+		.add(po.hash())
+		.add(po.image().url(
+			po.url("http://{S}tile.openstreetmap.org" + "/{Z}/{X}/{Y}.png")
+			.hosts(["a.","b.","c.",""])));
+	</script>
+</body>
+</html>
